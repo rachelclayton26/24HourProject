@@ -3,7 +3,7 @@
 import logo from './logo.svg';
 import './App.css';
 
-// const location = useGeolocation();
+
 function App() {
   return (
     <div className="main">
