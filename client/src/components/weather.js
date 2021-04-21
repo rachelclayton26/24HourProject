@@ -6,6 +6,9 @@ key: "07eaa6a8ac52b5a89c32ab04f65d24c2",
 base: "https://api.openweathermap.org/data/2.5/"
 }
 
+function tempCelcius(f){
+    return(f-32)*(5/9);
+}
 
 function Weather() {
   const [query, setQuery] = useState('')
@@ -56,12 +59,17 @@ function Weather() {
         <div className = "weather-box">
           <div className="temp">
             {Math.round(weather.main.temp)}
+        
+        {tempToggle ? tempCelcius(temperature).toFixed(2) : temperature}
+            &deg;{tempToggle ? "C" : "F"}       
           </div>
+
           <div className = "weather">{weather.weather[0].main}</div>
         </div>
         </div>
         ) : ('')}
-
+        
+        <button onClick = {()=>setTempToggle(!tempToggle)}>Toggle Temp</button>
       </main>
     </div>
   );
