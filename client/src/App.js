@@ -11,6 +11,10 @@ function App() {
           <button className="searchButton">Search</button>
           <input className="searchImput" type="text" placeholder="City, State"/>
         </form>
+        <form className="mobileSearch">
+        <img id="searchIcon" src="./assets/search.png"></img> 
+          <input className="mobileSearchImput" type="text" placeholder="City, State"/>
+        </form>
       </div>
       <div className="imageCropper">
         <img id="fetchImg" src=""></img>
