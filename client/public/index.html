@@ -31,9 +31,8 @@
     <script>
     if('geolocation' in navigator) {
       console.log("geolocation is available");
-      navigator.geolocation.getCurrentPosition(function(position) {
-       console.log(position.coords.latitude);
-       console.log(position.coords.longitude);
+      navigator.geolocation.getCurrentPosition(position => {
+       console.log(position.coords);
       });
     } else {
       console.log("geolocation IS NOT available");
