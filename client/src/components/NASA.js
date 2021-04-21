@@ -1,32 +1,50 @@
 import { useState, useEffect } from "react";
+// import Geolocate from './Geolocation';
+
 const key = "OvrxrgwbLdNgnfNdzJ2XBn7FjNPeo3qXF4i0byF78";
 const baseUrl = "https://api.nasa.gov/planetary/earth/imagery";
 
-const Nasa = (props) => {
-  const latitude = props.coords.lat;
-  const longitude = props.coords.lon;
-  const dates = new Date().toISOString().split("T")[0];
+const Nasa = () => {
+  const [geolocation, setGeolocation] = useState();
+  const [result, setResult] = useState();
 
-  const urlForImage = `${baseUrl}?lon=${longitude}&lat=${latitude}&date=${dates}&dim=0.19&api_key=${key}`;
+  if('geolocation' in navigator) {
+    console.log("geolocation is available");
+    const currentPostion = navigator.geolocation.getCurrentPosition(
+      function(position) {
+        return position;
+      }
+    );
+    
 
-  const [result, setResult] = useState({});
-
-  useEffect(() => {
-    fetchImage();
-  });
+    setGeolocation(currentPostion)
+  } else {
+    console.log("geolocation IS NOT available");
+  }
+  
+    useEffect(() => {
+      if (geolocation) {
+        const latitude = geolocation.coords.lat;
+        const longitude = geolocation.coords.lon; 
+        const dates = new Date().toISOString().split("T")[0];
+        const urlForImage = `${baseUrl}?lon=${longitude}&lat=${latitude}&date=${dates}&dim=0.19&api_key=${key}` || "";
+      }
+      if(urlForImage) {
+        fetchImage();
+      }
+    });
 
   const fetchImage = async () => {
     console.log(urlForImage);
     fetch(urlForImage)
       .then((res) => {
-        console.log("res:", res);
-        return res.url;
+        console.log("success:", res);
+        return setResult(res.url);
       })
-      .then((res) => {
-        console.log(res);
-        setResult(res);
+      .catch(error => {
+        console.error('Error:', error);
       });
-  };
+    };
   return (
     <div>
       <img src={result} alt="pic"></img>

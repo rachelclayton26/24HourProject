@@ -1,12 +1,12 @@
-// import {Geolocation} from './components/Geolocation';
+// import Geolocate from './components/Geolocation';
+import Nasa from './components/NASA';
 
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="main">
-    
+      <Nasa />
     </div>
   );
 }
