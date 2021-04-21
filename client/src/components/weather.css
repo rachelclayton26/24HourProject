@@ -1,0 +1,59 @@
+.weatherApp{
+    height: 245pt;
+    margin-top: -245pt;
+    margin-left:10pt;
+    margin-right:10pt;
+    Padding: 15pt;
+    /* background-color: pink; */
+}
+
+.location-box, .weather-box{
+    color: #9ad6f2;
+}
+
+.search-box{
+    display: flex;
+    justify-content: space-between;
+}
+
+.toggleButton{
+    border-radius: 1pt;
+    border: none;
+    width: 40pt;
+    height: 25pt;
+    margin-top: 2.5vh;
+    text-transform: uppercase;
+    font-size: 11pt;
+    background-color: #1d82c5;
+    color: #051622;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+.location{
+    font-size: 15pt;
+    font-family: "Montserrat";
+    font-weight: bold;
+    text-align: left;
+}
+
+.date{
+    font-size: 10pt;
+    font-family: "Montserrat";
+    text-align: left;
+}
+
+.temp{
+    font-size: 70pt;
+    font-family: "Montserrat";
+    font-weight: bold;
+    text-align: center;
+}
+
+.weather{
+    font-size: 15pt;
+    font-family: "Montserrat";
+    font-weight: bold;
+    text-align: center; 
+}

@@ -1,4 +1,6 @@
-import logo from './logo.svg';
+import Nasa from "./components/NASA";
+import Weather from "./components/Weather"
+import bird from "./assets/bird.jpeg"
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 <link href="http://fonts.cdnfonts.com/css/brusher" rel="stylesheet"></link>
@@ -30,13 +32,17 @@ function App() {
             <div class="col-sm">
               <div className="header">Bird's Eye View</div>
               <div className="fetchContainers">
-                <div className="nasaFetch"></div>
+                <div className="nasaFetch">
+                  {/* <Nasa /> */}
+                  <img id="bird" src={bird}></img>
+                </div>
               </div>
             </div>
             <div class="col-sm">
             <div className="header">Live Weather</div>
               <div className="fetchContainers">
                 <div className="weatherFetch"></div>
+                <Weather />
               </div>
             </div>
             <div class="col-sm">
