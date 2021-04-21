@@ -7,7 +7,7 @@ function openWeather(props) {
 
     const [temp, setTemp] = useState('');
     const [windSpeed, setWindSpeed] = useState('');
-
+  
     // const [lat, setLat] = useState('');
     // const [lon, setLon] = useState('');
 
