@@ -1,3 +1,4 @@
+import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 <link href="http://fonts.cdnfonts.com/css/brusher" rel="stylesheet"></link>
