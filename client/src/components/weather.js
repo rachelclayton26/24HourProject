@@ -13,7 +13,9 @@ function tempCelcius(f){
 function Weather() {
   const [query, setQuery] = useState('')
   const [weather, setWeather] = useState({})
-
+  const [temperature, setTemperature] = useState('');
+  const [tempToggle, setTempToggle] = useState('');
+    
   const search = e => {
     if(e.key==="Enter") {
       fetch(`${api.base}weather?q=${query}&units=imperial&appid=${api.key}`)
